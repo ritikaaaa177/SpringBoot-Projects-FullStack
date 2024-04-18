@@ -2,19 +2,19 @@ pipeline{
     agent any
 
  tools {
-        maven 'Maven' 
+        ant 'Ant'
     }
     stages{
         stage("test"){
             steps{
-                bat "mvn test"
+                bat "ant test"
             }
            
         }
 
           stage("build"){
             steps{
-                bat "mvn package"
+                bat "ant compile"
             }
            
         }
