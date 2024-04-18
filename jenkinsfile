@@ -8,14 +8,14 @@ tools{
     stages{
         stage("test"){
             steps{
-                bat "mvnw test"
+                bat "mvn test"
             }
            
         }
 
           stage("build"){
             steps{
-                bat "mvn clean package"
+                bat "mvn package"
             }
            
         }
