@@ -8,24 +8,19 @@ tools{
     stages{
         stage("test"){
             steps{
-                bat "mvn test"
+                bat "mvnw test"
             }
            
         }
 
           stage("build"){
             steps{
-                bat "mvn package"
+                bat "mvn clean package"
             }
            
         }
 
-          stage("deploy"){
-            steps{
-              echo "deploy to the container"
-            }
-           
-        }
+         
     }
     post{
         always{
