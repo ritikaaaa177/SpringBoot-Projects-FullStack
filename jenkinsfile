@@ -1,17 +1,21 @@
 pipeline{
     agent any
 
+tools{
+  maven 'Maven'
+}
+
     stages{
         stage("test"){
             steps{
-                bat "java -cp "target/classes:lib/*" org.junit.runner.JUnitCore com.example.MyTest"
+                bat "mvn test"
             }
            
         }
 
           stage("build"){
             steps{
-                bat "javac -d target/classes src/**/*.java"
+                bat "mvn package"
             }
            
         }
