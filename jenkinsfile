@@ -1,20 +1,17 @@
 pipeline{
     agent any
 
- tools {
-        ant 'Ant'
-    }
     stages{
         stage("test"){
             steps{
-                bat "ant test"
+                bat "java -cp "target/classes:lib/*" org.junit.runner.JUnitCore com.example.MyTest"
             }
            
         }
 
           stage("build"){
             steps{
-                bat "ant compile"
+                bat "javac -d target/classes src/**/*.java"
             }
            
         }
