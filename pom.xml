@@ -5,6 +5,9 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
+                <configuration>
+                <mainClass>spring.basic.BasicApplication</mainClass> <!-- Replace com.example.MyApplication with the fully qualified name of your main class -->
+            </configuration>
         <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
